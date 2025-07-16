@@ -1,0 +1,110 @@
+body {
+  margin: 0;
+  font-family: 'Inter', Arial, sans-serif;
+  background: #181c20;
+  color: #f5f6fa;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+.animated-bg {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 20% 30%, #6e8efb 0%, transparent 60%),
+              radial-gradient(circle at 80% 70%, #a777e3 0%, transparent 60%),
+              radial-gradient(circle at 50% 80%, #f7971e 0%, transparent 70%),
+              linear-gradient(120deg, #6e8efb 0%, #a777e3 100%);
+  filter: blur(60px) brightness(0.7) saturate(1.2);
+  animation: bgMove 16s ease-in-out infinite alternate;
+}
+@keyframes bgMove {
+  0% {background-position: 0% 0%, 100% 100%, 50% 100%, 0% 0%;}
+  100% {background-position: 100% 100%, 0% 0%, 100% 50%, 100% 100%;}
+}
+.container {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+header, footer {
+  margin-bottom: 2rem;
+  border-radius: 1.5rem;
+}
+header {
+  margin-top: 2.5rem;
+  padding: 1.5rem 0 1rem 0;
+}
+header h1 {
+  font-size: 2.3rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -1px;
+}
+main {
+  padding: 2.5rem 0 2rem 0;
+}
+section {
+  margin-bottom: 2.5rem;
+}
+section h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #6e8efb;
+  letter-spacing: 0.01em;
+}
+.socials {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1.5rem;
+}
+.socials a {
+  color: #a777e3;
+  text-decoration: none;
+  font-weight: 500;
+  transition: text-decoration 0.2s, color 0.2s;
+}
+.socials a:hover {
+  text-decoration: underline;
+  color: #6e8efb;
+}
+footer {
+  background: rgba(24,28,32,0.7);
+  border-radius: 1.5rem;
+  text-align: center;
+  padding: 1.2rem 0;
+  font-size: 1rem;
+  color: #bfc4d1;
+  margin-top: 2rem;
+}
+/* Glassmorphism */
+.glass {
+  background: rgba(255,255,255,0.10);
+  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.10);
+  backdrop-filter: blur(18px) saturate(1.2);
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255,255,255,0.18);
+}
+/* Entrance Animations */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(40px) scale(0.98);
+  transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+}
+[data-animate].animated {
+  opacity: 1;
+  transform: none;
+}
+@media (max-width: 700px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+  main {
+    padding: 1.2rem 0 1rem 0;
+  }
+} 
