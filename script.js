@@ -6,16 +6,17 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 100);
 });
 
-// Animate glass sections/cards on scroll
+// Fade-in animation for cards on scroll
 const observer = new window.IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('animated');
+      entry.target.classList.add('fade-in');
       observer.unobserve(entry.target);
     }
   });
 }, { threshold: 0.15 });
 
-document.querySelectorAll('.glass[data-animate]').forEach(el => {
+document.querySelectorAll('.glass-card.section').forEach(el => {
+  el.classList.add('pre-fade');
   observer.observe(el);
 }); 
