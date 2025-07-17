@@ -1,3 +1,11 @@
+// Add loading state management
+document.addEventListener('DOMContentLoaded', () => {
+  // Remove loading class after a brief delay to ensure smooth transitions
+  setTimeout(() => {
+    document.body.classList.remove('loading');
+  }, 100);
+});
+
 // Animate glass sections/cards on scroll
 const observer = new window.IntersectionObserver((entries) => {
   entries.forEach(entry => {

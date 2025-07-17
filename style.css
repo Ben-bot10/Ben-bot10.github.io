@@ -7,6 +7,21 @@ body {
   position: relative;
   overflow-x: hidden;
 }
+
+/* Add loading state to prevent flash */
+body.loading {
+  overflow: hidden;
+}
+
+body.loading .animated-bg {
+  opacity: 0;
+}
+
+body.loading [data-animate] {
+  opacity: 0 !important;
+  transform: translateY(40px) scale(0.98) !important;
+}
+
 .animated-bg {
   position: fixed;
   top: 0; left: 0; width: 100vw; height: 100vh;
@@ -18,6 +33,7 @@ body {
               linear-gradient(120deg, #6e8efb 0%, #a777e3 100%);
   filter: blur(60px) brightness(0.7) saturate(1.2);
   animation: bgMove 16s ease-in-out infinite alternate;
+  transition: opacity 0.5s ease;
 }
 @keyframes bgMove {
   0% {background-position: 0% 0%, 100% 100%, 50% 100%, 0% 0%;}
@@ -94,11 +110,18 @@ footer {
 [data-animate] {
   opacity: 0;
   transform: translateY(40px) scale(0.98);
-  transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+  transition: opacity 0.8s cubic-bezier(.4,0,.2,1), transform 0.8s cubic-bezier(.4,0,.2,1);
+  will-change: opacity, transform;
 }
 [data-animate].animated {
   opacity: 1;
   transform: none;
+}
+/* Ensure smooth initial load */
+header, footer {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.5s ease;
 }
 @media (max-width: 700px) {
   header h1 {
