@@ -19,6 +19,15 @@ body.dark-bg {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 0 1rem;
+}
+
+main {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .blur-bg {
@@ -44,6 +53,7 @@ body.dark-bg {
   text-shadow: 0 2px 16px #23294644;
   transition: color 0.3s;
   text-align: center;
+  word-break: break-word;
 }
 .site-title.big {
   font-size: 3.5rem;
@@ -143,15 +153,19 @@ nav {
   align-items: center;
   gap: 1.2rem;
   margin-bottom: 2.5rem;
+  width: 100%;
 }
 .hero-socials a {
   color: #eebc7d;
   text-decoration: none;
   font-weight: 500;
   font-size: 1.2rem;
-  padding: 0.3rem 0.7rem;
+  padding: 0.6rem 1rem;
   border-radius: 0.7rem;
   transition: color 0.2s, background 0.2s, box-shadow 0.2s;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
 }
 .hero-socials a:hover, .hero-socials a:focus {
   color: #fff;
@@ -163,7 +177,10 @@ nav {
   font-weight: 600;
   letter-spacing: 0.01em;
   background: none;
-  padding: 0;
+  padding: 0.6rem 1rem;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
 }
 .email-link:hover, .email-link:focus {
   color: #fff;
@@ -180,6 +197,7 @@ footer {
   background: none;
   border-radius: 0;
   border: none;
+  width: 100%;
 }
 
 /* Animations */
@@ -200,22 +218,26 @@ footer {
 /* Responsive Design */
 @media (max-width: 700px) {
   body.dark-bg {
-    padding: 0.5rem;
+    padding: 0 0.3rem;
+  }
+  main {
+    max-width: 100%;
+    padding: 0;
   }
   .site-title.big {
     font-size: 2.1rem;
     margin-bottom: 1.5rem;
   }
-  .hero-socials a {
+  .hero-socials a, .email-link {
     font-size: 1rem;
+    padding: 0.7rem 0.5rem;
   }
-  .nav-list {
-    gap: 1rem;
+  .hero-socials {
+    gap: 0.7rem;
+    margin-bottom: 1.5rem;
   }
-  .section h2 {
-    font-size: 1.1rem;
-  }
-  .section p, .section a {
-    font-size: 1rem;
+  footer {
+    font-size: 0.95rem;
+    padding: 0.7rem 0;
   }
 } 
