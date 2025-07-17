@@ -10,11 +10,15 @@ html, body {
 body.dark-bg {
   min-height: 100vh;
   font-family: 'Inter', 'Roboto', Arial, sans-serif;
-  background: linear-gradient(120deg, #2d232e 0%, #3a2c2e 100%);
+  background: linear-gradient(120deg, #232946 0%, #121629 100%);
   color: #f7e9e3;
   transition: background 0.7s cubic-bezier(.4,0,.2,1);
   position: relative;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .blur-bg {
@@ -22,50 +26,32 @@ body.dark-bg {
   top: 0; left: 0; width: 100vw; height: 100vh;
   z-index: 0;
   pointer-events: none;
-  background: radial-gradient(circle at 20% 30%, #ffb38555 0%, transparent 60%),
-              radial-gradient(circle at 80% 70%, #ff7e5f55 0%, transparent 60%),
-              radial-gradient(circle at 50% 80%, #feb47b55 0%, transparent 70%),
-              linear-gradient(120deg, #2d232e 0%, #3a2c2e 100%);
+  background: radial-gradient(circle at 20% 30%, #6e8efb33 0%, transparent 60%),
+              radial-gradient(circle at 80% 70%, #a777e333 0%, transparent 60%),
+              radial-gradient(circle at 50% 80%, #f7971e22 0%, transparent 70%),
+              linear-gradient(120deg, #232946 0%, #121629 100%);
   filter: blur(60px) brightness(0.8) saturate(1.1);
-  opacity: 0.8;
+  opacity: 0.7;
   transition: opacity 0.7s;
-}
-
-.main-wrapper {
-  position: relative;
-  z-index: 1;
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 2.5rem 1.2rem 1.5rem 1.2rem;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-.glass-card {
-  background: rgba(255, 255, 255, 0.10);
-  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.10);
-  backdrop-filter: blur(18px) saturate(1.2);
-  -webkit-backdrop-filter: blur(18px) saturate(1.2);
-  border-radius: 1.5rem;
-  border: 1px solid rgba(255,255,255,0.18);
-  margin-bottom: 2rem;
-  padding: 2rem 2.2rem;
-  transition: box-shadow 0.3s, background 0.3s;
-}
-.glass-card:hover, .glass-card:focus-within {
-  box-shadow: 0 12px 36px 0 rgba(255, 186, 120, 0.18);
-  background: rgba(255, 255, 255, 0.14);
 }
 
 .site-title {
   font-size: 2.3rem;
   font-weight: 700;
   letter-spacing: -1px;
-  margin-bottom: 0.5rem;
-  color: #ffb385;
-  text-shadow: 0 2px 16px #2d232e44;
+  margin-bottom: 1.5rem;
+  color: #eebc7d;
+  text-shadow: 0 2px 16px #23294644;
   transition: color 0.3s;
+  text-align: center;
+}
+.site-title.big {
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: -2px;
+  margin-bottom: 2.5rem;
+  color: #fff;
+  text-shadow: 0 4px 32px #6e8efb33;
 }
 
 nav {
@@ -151,15 +137,49 @@ nav {
   text-shadow: 0 2px 16px #ffb38555;
 }
 
-footer.glass-card {
+.hero-socials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 2.5rem;
+}
+.hero-socials a {
+  color: #eebc7d;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 0.7rem;
+  transition: color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+.hero-socials a:hover, .hero-socials a:focus {
+  color: #fff;
+  background: #6e8efb33;
+}
+.email-link {
+  font-size: 1.1rem;
+  color: #a777e3;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  background: none;
+  padding: 0;
+}
+.email-link:hover, .email-link:focus {
+  color: #fff;
+  background: none;
+  text-decoration: underline;
+}
+
+footer {
   text-align: center;
   font-size: 1rem;
   color: #f7e9e3cc;
   margin-top: auto;
   padding: 1.2rem 0;
-  background: rgba(45,35,46,0.7);
-  border-radius: 1.5rem;
-  border: 1px solid rgba(255,255,255,0.10);
+  background: none;
+  border-radius: 0;
+  border: none;
 }
 
 /* Animations */
@@ -179,14 +199,15 @@ footer.glass-card {
 
 /* Responsive Design */
 @media (max-width: 700px) {
-  .main-wrapper {
-    padding: 1.2rem 0.5rem 1rem 0.5rem;
+  body.dark-bg {
+    padding: 0.5rem;
   }
-  .glass-card {
-    padding: 1.2rem 1rem;
+  .site-title.big {
+    font-size: 2.1rem;
+    margin-bottom: 1.5rem;
   }
-  .site-title {
-    font-size: 1.5rem;
+  .hero-socials a {
+    font-size: 1rem;
   }
   .nav-list {
     gap: 1rem;
