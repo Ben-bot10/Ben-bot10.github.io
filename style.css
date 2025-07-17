@@ -217,21 +217,21 @@ footer {
 
 .profile-pic {
   display: block;
-  margin: 0 auto 2rem auto;
-  width: 128px;
-  height: 128px;
+  margin: 1.5rem auto 2rem auto;
+  width: clamp(88px, 28vw, 140px);
+  height: clamp(88px, 28vw, 140px);
   object-fit: cover;
   border-radius: 50%;
   border: 4px solid #232946;
   box-shadow: 0 4px 24px #23294633;
   background: #232946;
-  transition: box-shadow 0.3s, border-color 0.3s;
+  transition: box-shadow 0.3s, border-color 0.3s, width 0.3s, height 0.3s;
 }
 @media (max-width: 700px) {
   .profile-pic {
-    width: 88px;
-    height: 88px;
-    margin-bottom: 1.2rem;
+    margin: 1rem auto 1.5rem auto;
+    width: clamp(64px, 36vw, 100px);
+    height: clamp(64px, 36vw, 100px);
   }
 }
 
