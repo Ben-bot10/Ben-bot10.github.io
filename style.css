@@ -22,6 +22,117 @@ body.dark-bg {
   padding: 0 1rem;
 }
 
+body.comet-bg {
+  min-height: 100vh;
+  font-family: 'Inter', Arial, sans-serif;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, #5b6ee1 0%, #232946 70%, #181a2a 100%);
+  color: #f7f8fa;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.comet-center {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  padding: 2.5rem 1.2rem 1.5rem 1.2rem;
+}
+
+.comet-title {
+  font-size: 2.7rem;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  margin-bottom: 2.1rem;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 4px 32px #5b6ee155;
+  line-height: 1.1;
+}
+
+.comet-avatar {
+  width: clamp(90px, 28vw, 128px);
+  height: clamp(90px, 28vw, 128px);
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 0 6px #5b6ee133, 0 4px 32px #23294655;
+  border: none;
+  background: #232946;
+  transition: box-shadow 0.3s;
+}
+
+.comet-badge {
+  display: inline-block;
+  background: linear-gradient(90deg, #5b6ee1 0%, #a777e3 100%);
+  color: #fff;
+  font-size: 1.02rem;
+  font-weight: 600;
+  padding: 0.38em 1.2em;
+  border-radius: 999px;
+  margin-bottom: 2.1rem;
+  margin-top: -0.5rem;
+  box-shadow: 0 2px 12px #5b6ee122;
+  opacity: 0.93;
+  letter-spacing: 0.01em;
+}
+
+.comet-divider {
+  border: none;
+  border-top: 1.5px solid #5b6ee1;
+  width: 60%;
+  max-width: 180px;
+  margin: 1.2rem auto 2rem auto;
+  opacity: 0.18;
+}
+
+.comet-socials {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.comet-social-btn {
+  display: inline-block;
+  background: rgba(91, 110, 225, 0.10);
+  color: #5b6ee1;
+  font-weight: 600;
+  font-size: 1.08rem;
+  padding: 0.7em 1.5em;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 2px 12px #5b6ee111;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  text-align: center;
+}
+.comet-social-btn:hover, .comet-social-btn:focus {
+  background: linear-gradient(90deg, #5b6ee1 0%, #a777e3 100%);
+  color: #fff;
+  box-shadow: 0 4px 24px #5b6ee144;
+}
+
+.comet-footer {
+  text-align: center;
+  font-size: 1rem;
+  color: #f7f8fa99;
+  margin-top: auto;
+  padding: 1.2rem 0 0.7rem 0;
+  background: none;
+  border-radius: 0;
+  border: none;
+  width: 100%;
+}
+
 main {
   width: 100%;
   max-width: 480px;
@@ -259,5 +370,44 @@ footer {
   footer {
     font-size: 0.95rem;
     padding: 0.7rem 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .comet-center {
+    max-width: 100%;
+    padding: 1.2rem 0.5rem 1rem 0.5rem;
+    min-height: 90vh;
+  }
+  .comet-title {
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+  }
+  .comet-avatar {
+    width: clamp(64px, 36vw, 90px);
+    height: clamp(64px, 36vw, 90px);
+    margin-bottom: 1rem;
+  }
+  .comet-badge {
+    font-size: 0.93rem;
+    padding: 0.32em 1em;
+    margin-bottom: 1.2rem;
+  }
+  .comet-divider {
+    margin: 0.7rem auto 1.2rem auto;
+    width: 80%;
+    max-width: 100px;
+  }
+  .comet-socials {
+    gap: 0.7rem;
+    margin-bottom: 1.2rem;
+  }
+  .comet-social-btn {
+    font-size: 0.98rem;
+    padding: 0.7em 1em;
+  }
+  .comet-footer {
+    font-size: 0.95rem;
+    padding: 0.7rem 0 0.5rem 0;
   }
 } 
